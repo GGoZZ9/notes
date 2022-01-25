@@ -1,2 +1,2 @@
 # notes
-## shell command and shell script when resolve check log4j problem
+### shell command and shell script are used when resolved check log4j problem
