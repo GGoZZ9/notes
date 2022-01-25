@@ -1,0 +1,15 @@
+#!/bin/bash
+
+counter=0
+array_repo=()
+
+for dir in $(ls "/opt/data/repository/")
+do
+counter=$((counter+1))
+array_repo[$counter]=$dir
+done
+
+echo $counter
+#echo "${array_repo[*]}"
+
+python3 checkLog4j.py $counter "${array_repo[*]}"

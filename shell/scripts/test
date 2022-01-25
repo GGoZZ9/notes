@@ -1,0 +1,9 @@
+#!/bin/bash
+start_time=`date +'%Y-%m-%d %H:%M:%S'`
+end_time=`date +'%Y-%m-%d %H:%M:%S'`
+
+start_seconds=$(date -j -f $start_time +%s)
+end_seconds=$(date -j -f %Y-%m-%d 2015-09-28 +%s)
+
+
+echo $((start_seconds-end_seconds))

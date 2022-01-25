@@ -1,0 +1,39 @@
+#!/bin/bash
+
+now=`date +'%Y-%m-%d %H:%M:%S'`
+start_time=`date +'%Y-%m-%d %H:%M:%S'`
+counter=0
+all_dir=()
+
+for dir in $(ls "/opt/data/repository/")
+do
+  counter=$(($counter+1))
+  all_dir[$counter]=$dir
+done
+echo "counter, $counter"
+number_dir=${#all_dir[*]}
+
+start=100
+
+while (($start < 200))
+do
+  echo "start start_num,$start"
+  dir=${all_dir[$start]}
+  echo "dir, $dir"
+  cd "repository/"$dir"/"
+  mvn org.apache.maven.plugins:maven-dependency-plugin:3.2.0:tree > log4j-check.tmp
+
+  cd "/opt/data"
+  echo "end start_num, $start"
+  start=$(($start+1))
+done
+
+echo "counter start number, $start"
+
+end_time=`date +'%Y-%m-%d %H:%M:%S'`
+
+start_seconds=$(date --date="$start_time" +%s)
+end_seconds=$(date --date="$end_time" +%s)
+cost_time=$(($end_seconds-$start_seconds))
+echo "get maven dependency tree cost time is $(($cost_time/60))min $(($cost_time%60))s"
+date +%Y-%m-%d\ %H:%M:%S

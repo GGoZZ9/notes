@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for file in $(ls "/Users/freda/data/log")
+do
+  tag=$(awk -v RS='\0' -F'get maven dependency tree cost time is' '{print NF-1}' '/Users/freda/data/log/'$file)
+  echo "$tag"
+done
