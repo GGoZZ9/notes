@@ -6,3 +6,8 @@
  git config --global credential.helper store
  # git config 删掉所有代理，解决 connect refuse 443问题
  vim ~/.gitconfig
+ # 查到真实ip后，hosts里配置
+ vim /etc/hosts
+ 140.82.114.4 github.com
+ 199.232.69.194 github.global.ssl.fastly.net
+ 199.232.68.249 global.ssl.fastly.net
