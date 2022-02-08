@@ -7,6 +7,8 @@ filePath = "/opt/data/repository/quality-control_cucumber-common-library-release
 repoFolderName = filePath.split('/')[-1]
 namespace = repoFolderName[:repoFolderName.index("_")]
 repoName = repoFolderName.split("_")[1]
+filePath.upper()
+filePath.find()
 
 all_list = [1, 2, 3]
 
