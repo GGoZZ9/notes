@@ -1,0 +1,29 @@
+CD-to-UAT
+
+Check out Code
+Unit Test
+Mutation Test
+Dependency-check: mvn org.owasp:dependency-check-maven:6.2.2:aggregate -DsuppressionFiles=owasp-suppress.xml -DautoUpdate=false -Dformats=xml,html -DassemblyAnalyzerEnabled=false -DretireJsAnalyzerEnabled=false
+Inspect Code:   sonar.executeAnalysisJava
+                execute static code analysis and upload coverage report : mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar
+                mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar -Dsonar.dependencyCheck.reportPath=target/dependency-check-report.xml -Dsonar.dependencyCheck.htmlReportPath=target/dependency-check-report.html
+                sonar 命令 upload latest report to master branch 到 sonar server
+
+Integration Test: test.integrationTestJava
+                  sonar.executeAnalysisJava
+                  sonar.updateQualityGateGrade
+                  sonar.checkQualityGate
+
+Check Quality Gate: sonar.checkQualityGate
+Upload Alpha and Beta
+Deploy DB Change to UAT
+Deploy Service to UAT
+Cucumber Test
+
+CI
+Check out Code
+Unit Test
+Dependency-check
+Mutation Test
+Inspect Code: sonar.executeAnalysisJava
+Check Quality Gate: sonar.checkQualityGate

@@ -1,0 +1,10 @@
+一个pod 里面有两个container，一个是jnlp 就是那个agent负责Jenkins命令通信，一个是编译环境的buildtime
+buildtime 那个pod只是一次性的运行完就销毁了，buildtime的container是预先编译好 传到harbor上的
+
+buildtime 打一个制品到hurbor
+
+拉制品部署到相应的k8环境
+
+jenkins 配置节点里可以配置cloud（配置集群）
+
+base-image项目里有所有的base image

@@ -1,0 +1,2 @@
+开发webhook可以在提交MR之后触发企业微信，或者发邮件，或者触发jenkins job
+可以用gitlab api在添加一个webhook
