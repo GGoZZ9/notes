@@ -1,0 +1,7 @@
+1. jenkinsfile里配置的 library 'utils@master'，在jenkins系统配置，Global Pipeline Libraries , 加一个library 名字是 utils,
+加上git地址
+2. 自定义jenkins 插件，在jenkins 系统配置-插件管理-高级，上传插件 选择本地的.hpi文件
+3. 打开CR，需要在go-live的时候上传CR 号，配置在Apollo上，jenkins-pipeline DEV cr.verify.skip = all ，user.verify.skip = all就
+把CR都关了；如果配上go-live-conf 里的namespace 如 capp，就只关capp。
+在 go-live-conf 里给某个项目加 go-live的负责任权限，Key随意，Value里加上域账号即可。
+4. 在jenkins-pipeline-library apollo.groovy 用apollo api获取的配置，
