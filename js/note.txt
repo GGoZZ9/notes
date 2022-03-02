@@ -1,0 +1,2 @@
+cnpm 可解决某些依赖下不来的问题
+1. npm install -g cnpm --registry=https://registry.npm.taobao.org 全局安装cnpm,并且将安装 ' 包 '（各种包） 的地址切换到 国内的淘宝镜像
