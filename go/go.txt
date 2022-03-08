@@ -1,3 +1,6 @@
 设置以便下载go 的依赖包
 $ go env -w GO111MODULE=on
 $ go env -w GOPROXY=https://goproxy.io,direct
+
+改hosts
+216.58.200.51 pkg.go.dev
