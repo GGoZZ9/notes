@@ -4,3 +4,6 @@ $ go env -w GOPROXY=https://goproxy.io,direct
 
 改hosts
 216.58.200.51 pkg.go.dev
+
+package 在module里，package包含很多function，module用repo的路径表示，类似jenkins引入一个library，
+可以import一个package或者一个module
