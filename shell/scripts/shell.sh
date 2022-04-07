@@ -11,3 +11,6 @@ ping 127.0.0.1 # 测试域名或者服务器是否可用
 telnet 127.0.0.1 80 # 测试端口通不通 (TCP port)
 nc -vz 127.0.0.1 80 # 检查TCP端口通不通，NC是 Netstat工具的简称
 nc -uz 127.0.0.1 8907 # 检查UDP端口通不通
+
+
+systemctl status apollo-config.service
