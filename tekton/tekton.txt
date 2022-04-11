@@ -1,0 +1,9 @@
+https://tekton.dev/docs/pipelines/tasks/#task-vs-clustertask
+云原生 Cloud Native CI/CD
+
+https://hub.tekton.dev/
+
+https://hub.tekton.dev/tekton/task/argocd-task-sync-and-wait
+
+tekton用于CI argo CD用于CD，可以用go写api 执行某些参数选择，前端选择参数
+CLI 命令行接口
