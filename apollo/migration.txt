@@ -1,0 +1,10 @@
+在prod环境的pod上测试四台WH vm的8080，8090，8070端口通不通
+修改MySQL ApolloConfigDB, apolloconfigdb.serverconfig 表中 eureka.service.url = WH的service
+起服务 systemctl restart apollo-portal.service，systemctl restart apollo-config.service，systemctl restart apollo-admin.service
+用portal 的 ip测试Eureka
+修改portal VM上的 /etc/keepalived/keepalived.conf ， 10.67.230.5/23改成10.26.9.143/24，用10.26.9.143测试Eureka
+重启 keepalived：systemctl restart keepalived
+修改nginx 配置： portal上 /usr/local/nginx/conf.d/upstream.conf 把后端ip改了，重新加载nginx：/usr/local/nginx/sbin/nginx -t，/usr/local/nginx/sbin/nginx -s reload
+切域名 powerdns: apollo-configservice.homecreditcfc.cn, apollo.homecreditcfc.cn 这两个都改成10.26.9.143
+run Jenkins job https://jenkins.homecreditcfc.cn/job/development-office/job/jenkins-pipeline-test/job/deploy-to-non-prod
+写接口测试从Apollo 的 prod环境读取配置
